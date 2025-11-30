@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // TECPORT Brand Colors
+        tecport: {
+          blue: "hsl(var(--tecport-blue))",
+          orange: "hsl(var(--tecport-orange))",
+          "gray-dark": "hsl(var(--tecport-gray-dark))",
+          white: "hsl(var(--tecport-white))",
+          yellow: "hsl(var(--tecport-yellow))",
+          "gray-light": "hsl(var(--tecport-gray-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
