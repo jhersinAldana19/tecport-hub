@@ -1,27 +1,30 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
+import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
+import Home from "./pages/Home";
+import Organigrama from "./pages/Organigrama";
+import Cultura from "./pages/Cultura";
+import Procesos from "./pages/Procesos";
+import Equipos3D from "./pages/Equipos3D";
+import Contacto from "./pages/Contacto";
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  <BrowserRouter>
+    <div className="min-h-screen flex flex-column">
+      <Navbar />
+      <main className="flex-grow-1">
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/organigrama" element={<Organigrama />} />
+          <Route path="/cultura" element={<Cultura />} />
+          <Route path="/procesos" element={<Procesos />} />
+          <Route path="/equipos3d" element={<Equipos3D />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </main>
+      <Footer />
+    </div>
+  </BrowserRouter>
 );
 
 export default App;
